@@ -35,9 +35,13 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce(function(acc, curr){
+return acc + curr.price
+}, 0)
 
 
+
+console.log(summedPrice)
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -54,8 +58,13 @@ const cart = [
 */
 
 //CODE HERE
+function calcFinalPrice( cartTotal, couponValue, tax){
+ remainder = cartTotal * tax;
+ return cartTotal + remainder - couponValue
+}
 
 
+console.log(calcFinalPrice(30, 10, .06))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,6 +88,13 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    name `string` so that we know who the customer is
+    appetizer `string` first order
+    entree `string` their meal
+    drink count `number` all drinks will cost same price
+    dessert `if they are eating a dessert`
+    amount due `number` to show what is due for cost
+    
 
 */
 
@@ -88,3 +104,12 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    name: `Jeff Lyons`,
+    appetizer: `chips and queso`,
+    entree: `fajitas`,
+    drinks: 2,
+    dessert: `cake`,
+    amountDue: 22.89
+
+}

@@ -70,8 +70,8 @@ console.log(pizza.tags[1])
     Print the value of your new price variable.
 */
 
-//CODE HERE
-
+var price = pizza.price 
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -81,7 +81,8 @@ console.log(pizza.tags[1])
 */
 
 //CODE HERE
-
+var category = pizza.category
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -96,7 +97,46 @@ console.log(pizza.tags[1])
 */
 
 //CODE HERE
-
+const foodArr = [{
+    name: `pepperoni`,
+    price: 15,
+    category: `entree`,
+    popularity: 92,
+    rating: 93,
+    tags: [`cheese,`, `garlic`, `kids`]
+},
+{
+name: `burger`,
+price: 14,
+category: `entree`,
+popularity: 90,
+rating: 92,
+tags: [`cheese,`, `sauce`, `meat`]
+},
+{
+name: `hotdog`,
+price: 10,
+category: `entree`,
+popularity: 89,
+rating: 65,
+tags: [`bun,`, `sauce`, `kids`]
+},
+{
+name: `salad`,
+price: 118,
+category: `entree`,
+popularity: 70,
+rating: 60,
+tags: [`lettuce,`, `sauce`]
+},
+{
+ name: `taco`,
+price: 20,
+category: `entree`,
+popularity: 60,
+rating: 50,
+tags: [`cheese,`, `onion`, `kids`]}
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -113,10 +153,17 @@ console.log(pizza.tags[1])
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(function(property){
+    return property.tags.includes(`kids`)
+})
+
+       
+    
+    
 
 
 
+//console.log(filteredFood)
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -157,6 +204,26 @@ console.log(pizza.tags[1])
 */
 
 //CODE HERE
+function filterByProperty(property, number, type) {
+
+  filteredFood2 = foodArr.filter(function(element){
+     if(type === `above` && property === `rating`){
+         return element.rating >= number 
+ }else if(type === `below` && property === `rating`){
+        return element.rating <= number
+ }else if(type === `above` && property === `price`){
+    return element.price >= number
+ } else if(type === `below` && property === `price`){
+    return element.price <= number
+}   else if(type === `above` && property === `popularity`){
+    return element.popularity >= number
+ }else if(type === `below` && property === `popularity`){
+    return element.popularity <= number
+}
+ }
+ )
+ 
+}
 
 
 /*
@@ -167,3 +234,6 @@ console.log(pizza.tags[1])
 */
 
 //CODE HERE
+filterByProperty(`rating`, 65, `above`)
+
+console.log(filteredFood2)

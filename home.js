@@ -133,8 +133,9 @@ const deals = [
 */
 
 //CODE HERE
+var title = deals[0].title.replace(`15% Off!`, `10% Off!`);
 
-
+console.log(title)
 
 /*
     The restaurant is going to continue its
@@ -150,3 +151,6 @@ const deals = [
 */
 
 //CODE HERE
+var desc = deals[1].desc.replace(`March!`, `April!`).trim()
+
+console.log(desc)
